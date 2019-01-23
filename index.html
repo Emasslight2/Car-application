@@ -16,15 +16,11 @@
     <main id="main-grid">
         
         <section id="search-section">
-            <h3>Find car:</h3>
-            <div>
-                <input tyepe="text" placeholder="name, model..." id="search-input">
-                <ul>
-                    <li>12345</li>
-                    <li>12345</li>
-                    <li>12345</li>
-                </ul>
-            </div>
+            <label for="search">Find car:</label>
+            <input type="text" placeholder="name, model..." id="search">
+            <ul>
+                <li class="pointer" v-for="car in cars">{{ car.name }} - {{ car.model }}</li>
+            </ul>
         </section>
         <article id="car-photo-area">
             <div><h2>Ford</h2></div>
