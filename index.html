@@ -17,24 +17,27 @@
         
         <section id="search-section">
             <label for="search">Find car:</label>
-            <input type="text" placeholder="name, model..." id="search">
+            <input type="text" placeholder="name, model..." id="search" v-model="search">
             <ul>
-                <li class="pointer" v-for="car in cars">{{ car.name }} - {{ car.model }}</li>
+                <li class="pointer" v-for="(car, index) in filteredCars" v-on:click="selectCar(car,index)"  v-bind:class="{active: selectedCarIndex===index}"
+                >{{ car.name }} - {{ car.model }}</li>
             </ul>
         </section>
         <article id="car-photo-area">
-            <div><h2>Ford</h2></div>
-            <div><img src="./images/Ford-mustang.jpg" width="420"  alt="Car photo" id="photo"></div>
+            <div><h2>{{ car.name }}</h2></div>
+            <div><img v-bind:src="car.image" width="420"  v-bind:alt="car.name" id="photo"></div>
         </article>
         <aside id="car-details">
             <h3>Car details</h3>
             <ul>
-                <li>Owner: <b>Alexander</b></li>
-                <li>Model: <b>Mustang</b></li>
-                <li>Year: <b>2018</b></li>
+                <li>Owner: <b>{{ car.owner }}</b></li>
+                <li>Model: <b>{{ car.model }}</b></li>
+                <li>Year: <b>{{ car.year }}</b></li>
             </ul>
-            <p>+996 0555 432455</p>
-            <button class="btn" id="show-phone">Show phone</button>
+            <div id="phone-section">
+                <p v-if="phoneVisibility">{{ car.phone }}</p>
+            </div>
+            <button class="btn" id="show-phone" v-on:click="phoneVisibility=!phoneVisibility">{{ phoneBtnText }}</button>
             <button class="btn" id="buy">Buy</button>
         </aside>
         

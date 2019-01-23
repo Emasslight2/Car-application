@@ -78,6 +78,14 @@ main{
     background:blue;
     color:white;
 }
+.active{
+    background-color: #009FE3;
+}
+#phone-section{
+    height:2em;
+    padding:0;
+    margin:0;
+}
 @media (max-width:1280px){
     main{
         grid-template-areas:"search car-photo-area"

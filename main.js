@@ -13,6 +13,26 @@ let cars=[
 new Vue({
     el:'main',
     data: {
-        cars:cars
+        cars:cars,
+        car:cars[0],
+        selectedCarIndex:0,
+        phoneVisibility:false,
+        search:''
+    },
+    methods:{
+        selectCar:function(car,index){
+            this.car = car;
+            this.selectedCarIndex = index;
+        }
+    },
+    computed:{
+        phoneBtnText(){
+            return this.phoneVisibility ? 'Hide phone' : 'Show phone';
+        },
+        filteredCars(){
+            return this.cars.filter(car => {
+                return car.name.indexOf(this.search)>-1 || car.model.indexOf(this.search)>-1;
+            })
+        }
     }
 })
