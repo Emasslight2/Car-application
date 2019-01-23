@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Car application</h1>
+    </header>
+    <main id="main-grid">
+        
+        <section id="search-section">
+            <h3>Find car:</h3>
+            <div>
+                <input tyepe="text" placeholder="name, model..." id="search-input">
+                <ul>
+                    <li>12345</li>
+                    <li>12345</li>
+                    <li>12345</li>
+                </ul>
+            </div>
+        </section>
+        <article id="car-photo-area">
+            <div><h2>Ford</h2></div>
+            <div><img src="./images/Ford-mustang.jpg" alt="Car photo" id="photo"></div>
+        </article>
+        <aside id="car-details">
+            <h3>Car details</h3>
+            <ul>
+                <li>Owner: <b>Alexander</b></li>
+                <li>Model: <b>Mustang</b></li>
+                <li>Year: <b>2018</b></li>
+            </ul>
+            <p>+996 0555 432455</p>
+            <button class="btn" id="show-phone">Show phone</button>
+            <button class="btn" id="buy">Buy</button>
+        </aside>
+        
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+</body>
+</html>
