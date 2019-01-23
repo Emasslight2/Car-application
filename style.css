@@ -21,16 +21,24 @@ main{
     height:2em;
     font-size:1em;
     border:none;
-    border-bottom:1px solid blue;
+    border-bottom:1px solid #009FE3;
+}
+#search-input:focus{
+    box-shadow:1px 1px 5px 1px #009FE3;
 }
 #search-section ul{
     padding:0;
     border:1px solid green;
     border-radius:1em;
 }
+
 #search-section li{
     list-style-type:none;
     padding: 0.5em 0 0.5em 0;
+    border-radius:1em;
+}
+#search-section li:hover{
+    background:#009FE3;
 }
 #car-photo-area{
     padding:1em;
